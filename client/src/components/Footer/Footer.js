@@ -2,10 +2,11 @@
 
 import React from 'react'
  import './Footer.scss'
+ import {words} from '../../words'
  function Footer() {
   return (
     <footer>
-        &copy; copyright Mohamed Hamdy 2022
+        {words.footerTitle}
     </footer>
   )
 }
