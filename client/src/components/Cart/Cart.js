@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import CheckoutForm from '../CheckoutForm/CheckoutForm'
 import './Cart.scss'
+import Bounce from 'react-reveal/Bounce';
 function Cart(props) {
 
   const [showForm, setShowForm] = useState(false)
@@ -20,10 +21,13 @@ function Cart(props) {
   }
 
   return (
+    
     <div className='cart-wrapper'>
         <div className='cart-title'>
             {props.cartItems.length === 0 ? 'Cart Empty' : <p>there is {props.cartItems.length} product in cart</p>}
         </div>
+        <Bounce bottom cascade>
+
         <div className='cart-items'>
           {props.cartItems.map(item =>(
             <div className='cart-item' key={item.id}> 
@@ -41,6 +45,7 @@ function Cart(props) {
           </div>  
           ))}
         </div>
+        </Bounce>
         { 
           props.cartItems.length !== 0 &&
           (
@@ -60,6 +65,9 @@ function Cart(props) {
         submitOrder={submitOrder} 
         handleChange={handleChange}
         />
+        
+        
+        
        
     </div>
   )
