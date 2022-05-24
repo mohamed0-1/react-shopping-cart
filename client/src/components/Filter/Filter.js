@@ -4,7 +4,7 @@ import './Filter.scss'
   return (
     <div className='filter-wrapper'>
         <h2 className='filter-title'>filter</h2>
-        <div className='num-of-product'>Number of Product 4</div>
+        <div className='num-of-product'>Number of Product {props.productNumber}</div>
         <div className='filter-by-size'>
             <span>filter</span>
             {/* <select className='filter-select' > */}
@@ -17,7 +17,6 @@ import './Filter.scss'
                 <option value='XL'>XL</option>
                 <option value='XXL'>XXL</option>
             </select>
-
         </div>
         <div className='filter-by-size'>
             <span>order</span>
@@ -25,9 +24,7 @@ import './Filter.scss'
                 <option value="latest">Latest</option>
                 <option value="lowest">lowest</option>
                 <option value="highest">Highest</option>
-
             </select>
-
         </div>
     </div>
   )
