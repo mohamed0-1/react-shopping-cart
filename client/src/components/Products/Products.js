@@ -3,7 +3,7 @@ import '../../css/Products/Products.css'
 import ProductModal from './ProductModal'
 import Bounce from 'react-reveal/Bounce';
 import {connect} from 'react-redux'
-import { fetchProducts } from "../../store/actions/product";
+import { fetchProducts } from "../../store/actions/products";
 function Products(props) {
   // console.log(props)
   const [product, setProduct] = useState('')
@@ -15,9 +15,9 @@ function Products(props) {
   const closeModal = () => {
     setProduct(false)
 }
-  useEffect( () =>{
-    props.fetchProducts()
-  },[])
+useEffect( () => {
+  props.fetchProducts()
+}, [])
 
   return (
     <Bounce left cascade>
@@ -44,6 +44,6 @@ function Products(props) {
 
 export default connect( (state) =>{
   return {
-    products : state.products.products
+    products : state.products.filterProducts
   }
 }, {fetchProducts})(Products);
